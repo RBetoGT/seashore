@@ -60,12 +60,14 @@ double calculateHue(fillContext *ctx,int x,int y) {
     return 0;
 }
 
+
 static inline float colorDistance(unsigned char *e1,unsigned char *e2)
 {
-    int rmean = ( (int)e1[CR] + (int)e2[CR] ) / 2;
-    int r = (int)e1[CR] - (int)e2[CR];
-    int g = (int)e1[CG] - (int)e2[CG];
-    int b = (int)e1[CB] - (int)e2[CB];
+    int temp,temp2;
+    int rmean = ( (int)int_mult(e1[CR],e1[alphaPos],temp) + (int)int_mult(e2[CR],e2[alphaPos],temp2) ) / 2;
+    int r = (int)int_mult(e1[CR],e1[alphaPos],temp) - (int)int_mult(e2[CR],e2[alphaPos],temp2);
+    int g = (int)int_mult(e1[CG],e1[alphaPos],temp) - (int)int_mult(e2[CG],e2[alphaPos],temp2);
+    int b = (int)int_mult(e1[CB],e1[alphaPos],temp) - (int)int_mult(e2[CB],e2[alphaPos],temp2);
 //    return sqrt((float)((((512+rmean)*r*r)>>8) + 4*g*g + (((767-rmean)*b*b)>>8)));
     return (((512+rmean)*r*r)>>8) + 4*g*g + (((767-rmean)*b*b)>>8);
 }
@@ -75,6 +77,9 @@ static inline bool inTolerance(unsigned char *base,unsigned char *color,unsigned
     if (channel == kAllChannels) {
         if ((base[alphaPos] == 0 && color[alphaPos] == 0) || tolerance==255)
             return YES;
+        if (memcmp(base,color,SPP-1)==0 && (abs(base[alphaPos]-color[alphaPos]<tolerance))) {
+            return YES;
+        }
         float dist = colorDistance(base,color);
         return dist <= tolerance*tolerance;
         //        for (k = CR; k <= CB; k++) {
