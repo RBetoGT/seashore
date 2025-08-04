@@ -137,6 +137,8 @@
 		2BA290C829527C3300175B25 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BA290C729527C3200175B25 /* CoreGraphics.framework */; };
 		2BB338C423C1119600647008 /* toFitTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BB338C323C1119600647008 /* toFitTemplate.png */; };
 		2BC3CE6A293C47BA005394FE /* star.fill@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BC3CE69293C47BA005394FE /* star.fill@2x.png */; };
+		2BC6064F2D654462008E9373 /* SeaLibraryStatic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BC6064E2D654462008E9373 /* SeaLibraryStatic.framework */; };
+		2BC606502D654462008E9373 /* SeaLibraryStatic.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2BC6064E2D654462008E9373 /* SeaLibraryStatic.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2BC9B0442958B9970042CA01 /* PocketSVG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BC9B0432958B9970042CA01 /* PocketSVG.framework */; };
 		2BCD7A14286281F7007EB89B /* Support Seashore.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2BCD7A12286281F7007EB89B /* Support Seashore.rtf */; };
 		2BCD7A18286294E2007EB89B /* SeaWhatsNew.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCD7A17286294E2007EB89B /* SeaWhatsNew.m */; };
@@ -478,6 +480,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		2BC606512D654463008E9373 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2BC606502D654462008E9373 /* SeaLibraryStatic.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2BD5925121E3E87E002D150B /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -828,6 +841,7 @@
 		2BA290C729527C3200175B25 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2BB338C323C1119600647008 /* toFitTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toFitTemplate.png; sourceTree = "<group>"; };
 		2BC3CE69293C47BA005394FE /* star.fill@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star.fill@2x.png"; sourceTree = "<group>"; };
+		2BC6064E2D654462008E9373 /* SeaLibraryStatic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SeaLibraryStatic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BC9B0432958B9970042CA01 /* PocketSVG.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PocketSVG.framework; path = ../PocketSVG/PocketSVG.framework; sourceTree = "<group>"; };
 		2BCD7A13286281F7007EB89B /* English */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = English; path = "English.lproj/Support Seashore.rtf"; sourceTree = "<group>"; };
 		2BCD7A16286294E2007EB89B /* SeaWhatsNew.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeaWhatsNew.h; sourceTree = "<group>"; };
@@ -1283,6 +1297,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BC6064F2D654462008E9373 /* SeaLibraryStatic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1443,6 +1458,7 @@
 		2A37F4C3FDCFA73011CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2BC6064E2D654462008E9373 /* SeaLibraryStatic.framework */,
 				2BF59F392BE3FACA008B330A /* WebP.xcframework */,
 				2BF868942BD0931500666B72 /* CannyEdgeDetector+.bundle */,
 				2BF868822BD0112700666B72 /* Vibrance+.bundle */,
@@ -2204,6 +2220,7 @@
 				2BFC6C2E2778E06B00F707D9 /* Sources */,
 				2BFC6C2F2778E06B00F707D9 /* Frameworks */,
 				2BFC6C302778E06B00F707D9 /* Resources */,
+				2BC606512D654463008E9373 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

@@ -40,10 +40,12 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
+      enableGPUFrameCaptureMode = "3"
+      enableGPUValidationMode = "1"
       allowLocationSimulation = "YES">
       <PathRunnable
          runnableDebuggingMode = "0"
-         FilePath = "/usr/bin/qlmanage">
+         FilePath = "/Users/robertengels/seashore/qlmanage">
       </PathRunnable>
       <MacroExpansion>
          <BuildableReference
@@ -56,7 +58,15 @@
       </MacroExpansion>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "-p /Users/robertengels/Desktop/gimp210.xcf"
+            argument = "-c org.gimp.xcf"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "-g $(BUILD_DIR)/Debug/XCFQuickLook.qlgenerator"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "-p /Users/robertengels/Desktop/regular.xcf"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

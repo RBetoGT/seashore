@@ -33,7 +33,17 @@
     CGContextRef ctx = CGBitmapContextCreate(mask,w,h,8,w,CGColorSpaceCreateDeviceGray(),kCGImageAlphaNone);
     CGContextSetFillColorWithColor(ctx,CGColorCreateGenericRGB(1,1,1,1));
     CGContextFillRect(ctx,CGRectMake(4,4,w/2,h/2));
-    NSBezierPath *path = [ConnectedComponents getPaths:mask width:w height:h];
+    CGPathRef path = [ConnectedComponents getPaths:mask width:w height:h];
+    NSLog(@"path is %@",path);
+}
+
+- (void)testMaskToPathsNoEdges {
+    int w=16,h=16;
+    unsigned char *mask = calloc(w*h,1);
+    CGContextRef ctx = CGBitmapContextCreate(mask,w,h,8,w,CGColorSpaceCreateDeviceGray(),kCGImageAlphaNone);
+    CGContextSetFillColorWithColor(ctx,CGColorCreateGenericRGB(1,1,1,1));
+    CGContextFillRect(ctx,CGRectMake(1,1,w-2,h-2));
+    CGPathRef path = [ConnectedComponents getPaths:mask width:w height:h];
     NSLog(@"path is %@",path);
 }
 
