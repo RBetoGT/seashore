@@ -79,9 +79,15 @@ int signum(int n) { return (n < 0) ? -1 : (n > 0) ? +1 : 0; }
         [[document whiteboard] ignoreSelection:true];
 
         unsigned char _color[4];
-        _color[CR]= [color redComponent]*255;
-        _color[CG]= [color greenComponent]*255;
-        _color[CB]= [color blueComponent]*255;
+
+        NSColor *sRGBColor = [color colorUsingColorSpace:NSColorSpace.sRGBColorSpace];
+        CGFloat red = sRGBColor ? sRGBColor.redComponent : 0.0;
+        CGFloat green = sRGBColor ? sRGBColor.greenComponent : 0.0;
+        CGFloat blue = sRGBColor ? sRGBColor.blueComponent : 0.0;
+
+        _color[CR]= red*255;
+        _color[CG]= green*255;
+        _color[CB]= blue*255;
         _color[alphaPos] = 255;
 
         IntRect tmp = [self fillOverlay:startPoint color:_color tolerance:tolerance allRegions:[options selectAllRegions] op:weakOp];
