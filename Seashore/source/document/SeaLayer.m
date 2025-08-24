@@ -668,7 +668,9 @@
 
     if([self shouldTransform]) {
         PositionTool *positionTool = (PositionTool*)[document currentTool];
-        tx = [[positionTool transform] cgtransform];
+        if (positionTool != nil) {
+            tx = [[positionTool transform] cgtransform];
+        }
     }
 
     return tx;
