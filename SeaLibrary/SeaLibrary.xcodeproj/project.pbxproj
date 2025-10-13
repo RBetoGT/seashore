@@ -296,6 +296,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2BF10A4429371771002272AB /* Seashore.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 8Q9M9WAC2F;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -304,6 +305,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2BF10A4429371771002272AB /* Seashore.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 8Q9M9WAC2F;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

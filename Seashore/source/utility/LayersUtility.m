@@ -1,7 +1,7 @@
+#import "SeaDocument.h"
 #import "LayersUtility.h"
 #import "SeaLayer.h"
 #import "SeaContent.h"
-#import "SeaDocument.h"
 #import "SeaWhiteboard.h"
 #import "LayerSettings.h"
 #import "SeaHelpers.h"
@@ -64,12 +64,12 @@
 
 - (IBAction)show:(id)sender
 {
-	[[[document window] contentView] setVisibility: YES forRegion: kLayersPanel];
+	[[document contentView] setVisibility: YES forRegion: kLayersPanel];
 }
 
 - (IBAction)hide:(id)sender
 {
-	[[[document window] contentView] setVisibility: NO forRegion: kLayersPanel];
+	[[document contentView] setVisibility: NO forRegion: kLayersPanel];
 }
 
 - (void)setEnabled:(BOOL)value
@@ -103,7 +103,7 @@
 
 - (BOOL)visible
 {
-	return [[[document window] contentView] visibilityForRegion: kLayersPanel];
+	return [[document contentView] visibilityForRegion: kLayersPanel];
 }
 
 - (IBAction)addLayer:(id)sender

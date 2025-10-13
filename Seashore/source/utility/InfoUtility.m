@@ -1,5 +1,5 @@
-#import "InfoUtility.h"
 #import "SeaDocument.h"
+#import "InfoUtility.h"
 #import "ToolboxUtility.h"
 #import "SeaTools.h"
 #import "EyedropTool.h"
@@ -69,13 +69,13 @@
 
 - (IBAction)show:(id)sender
 {
-	[[[document window] contentView] setVisibility: YES forRegion: kPointInformation];
+	[[document contentView] setVisibility: YES forRegion: kPointInformation];
     [toggleButton setState:1];
 }
 
 - (IBAction)hide:(id)sender
 {
-	[[[document window] contentView] setVisibility: NO forRegion: kPointInformation];	
+	[[document contentView] setVisibility: NO forRegion: kPointInformation];
     [toggleButton setState:0];
 }
 
@@ -219,7 +219,7 @@
 
 - (BOOL)visible
 {
-	return [[[document window] contentView] visibilityForRegion: kPointInformation];
+	return [[document contentView] visibilityForRegion: kPointInformation];
 }
 
 @end

@@ -48,6 +48,8 @@ enum
 
 - (BOOL)visibilityForRegion:(int)region;
 - (void)setVisibility:(BOOL)visibility forRegion:(int)region;
+- (void)shutdown;
 - (void)hideBanner;
 - (IBAction)showSupportSeashore:(id)sender;
+- (NSView*)documentView;
 @end

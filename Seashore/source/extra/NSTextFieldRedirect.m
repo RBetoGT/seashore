@@ -1,9 +1,9 @@
 #import "NSTextFieldRedirect.h"
+#import "SeaDocument.h"
 #import "SeaController.h"
 #import "OptionsUtility.h"
 #import "SeaTools.h"
 #import "TextTool.h"
-#import "SeaDocument.h"
 
 @implementation NSTextFieldRedirect
 

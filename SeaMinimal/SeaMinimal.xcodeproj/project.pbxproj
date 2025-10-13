@@ -166,7 +166,6 @@
 		2B43BF4F27DD1D670094F84E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = NO;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					2B2EFA9328BF1E67009B225D = {
@@ -252,6 +251,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2B879E0E295017A90052EBFA /* Seashore.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 8Q9M9WAC2F;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -260,6 +260,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2B879E0E295017A90052EBFA /* Seashore.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 8Q9M9WAC2F;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

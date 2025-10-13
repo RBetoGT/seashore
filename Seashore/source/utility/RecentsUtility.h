@@ -10,6 +10,7 @@
 #import "BrushOptions.h"
 #import "PencilOptions.h"
 #import "BucketOptions.h"
+#import <SeaComponents/SeaComponents.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -25,8 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface RecentsUtility : NSObject
 {
     // The document that owns the utility
-    __weak IBOutlet id document;
-
+    __weak IBOutlet SeaDocument *document;
     __weak IBOutlet NSCollectionView *recentsView;
 
     NSMutableArray<Memory> *memories;

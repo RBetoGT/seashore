@@ -109,5 +109,9 @@
     int selected = [rightSideTabs indexOfTabViewItem:[rightSideTabs selectedTabViewItem]];
     [gUserDefaults setInteger:selected forKey:@"rightsidetabs selected"];
 }
+- (NSView*)documentView
+{
+    return contentView;
+}
 
 @end

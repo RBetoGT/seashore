@@ -399,35 +399,35 @@
 	// Sometimes in other cases
 	switch (tag) {
 		case 200:
-			if([[[document window] contentView] visibilityForRegion: kLayersPanel])
+			if([[document contentView] visibilityForRegion: kLayersPanel])
 				[menuItem setTitle:@"Hide Layers"];
 			else
 				[menuItem setTitle:@"Show Layers"];
 			return YES;
 		break;
 		case 192:
-			if([[[document window] contentView] visibilityForRegion:kPointInformation])
+			if([[document contentView] visibilityForRegion:kPointInformation])
 				[menuItem setTitle:@"Hide Point Information"];
 			else
 				[menuItem setTitle:@"Show Point Information"];
 			return YES;
 		break;
 		case 191:
-			if([[[document window] contentView] visibilityForRegion: kOptionsPanel])
+			if([[document contentView] visibilityForRegion: kOptionsPanel])
 				[menuItem setTitle:@"Hide Options Panel"];
 			else
 				[menuItem setTitle:@"Show Options Panel"];
 			return YES;			
 		break;
 		case 194:
-			if([[[document window] contentView] visibilityForRegion:kStatusBar])
+			if([[document contentView] visibilityForRegion:kStatusBar])
 				[menuItem setTitle:@"Hide Status Bar"];
 			else
 				[menuItem setTitle:@"Show Status Bar"];
 			return YES;			
 		break;
         case 195:
-            if([[[document window] contentView] visibilityForRegion:kRecentsHistogram])
+            if([[document contentView] visibilityForRegion:kRecentsHistogram])
                 [menuItem setTitle:@"Hide Recents/Histogram"];
             else
                 [menuItem setTitle:@"Show Recents/Histogram"];

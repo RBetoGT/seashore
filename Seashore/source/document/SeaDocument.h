@@ -10,11 +10,13 @@
 #import "LayersUtility.h"
 #import "StatusUtility.h"
 #import "WarningsUtility.h"
+#import "RecentsUtility.h"
 #import "SeaView.h"
 #import "AbstractTool.h"
 #import "SeaScrollView.h"
 #import "SeaHistogram.h"
 #import "SeaPluginData.h"
+#import "SeaWindowContent.h"
 
 /*!
 	@class		SeaDocument
@@ -54,9 +56,6 @@
 	// The plug-in data used by this document
 	__weak IBOutlet SeaPluginData *pluginData;
 	
-	// An outlet to the view associated with this document
-    IBOutlet id contentView;
-
     IBOutlet id histogram;
 
     SeaView *seaView;
@@ -238,6 +237,8 @@
 	@result		Returns an instance of NSWindow.
 */
 - (id)window;
+
+- (SeaWindowContent*)contentView;
 
 /*!
 	@method		updateWindowColor

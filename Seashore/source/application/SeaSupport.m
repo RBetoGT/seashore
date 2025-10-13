@@ -97,7 +97,7 @@
     NSArray *documents = [[NSDocumentController sharedDocumentController] documents];
 
     for (SeaDocument *doc in documents) {
-        [[[doc window] contentView] hideBanner];
+        [[doc contentView] hideBanner];
     }
 }
 

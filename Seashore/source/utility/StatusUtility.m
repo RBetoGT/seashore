@@ -22,18 +22,18 @@
 
 - (IBAction)show:(id)sender
 {
-	[[[document window] contentView] setVisibility: YES forRegion: kStatusBar];
+	[[document contentView] setVisibility: YES forRegion: kStatusBar];
 	[self update];
 }
 
 - (IBAction)hide:(id)sender
 {
-	[[[document window] contentView] setVisibility: NO forRegion: kStatusBar];
+	[[document contentView] setVisibility: NO forRegion: kStatusBar];
 }
 
 - (IBAction)toggle:(id)sender
 {
-	if([[[document window] contentView] visibilityForRegion: kStatusBar]) {
+	if([[document contentView] visibilityForRegion: kStatusBar]) {
 		[self hide:sender];
 	}else{
 		[self show:sender];

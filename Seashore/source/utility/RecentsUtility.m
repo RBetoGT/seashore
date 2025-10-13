@@ -178,18 +178,18 @@
 
 - (IBAction)show:(id)sender
 {
-    [[[document window] contentView] setVisibility: YES forRegion: kRecentsHistogram];
+    [[document contentView] setVisibility: YES forRegion: kRecentsHistogram];
     [self update];
 }
 
 - (IBAction)hide:(id)sender
 {
-    [[[document window] contentView] setVisibility: NO forRegion: kRecentsHistogram];
+    [[document contentView] setVisibility: NO forRegion: kRecentsHistogram];
 }
 
 - (IBAction)toggle:(id)sender
 {
-    if([[[document window] contentView] visibilityForRegion: kRecentsHistogram]) {
+    if([[document contentView] visibilityForRegion: kRecentsHistogram]) {
         [self hide:sender];
     }else{
         [self show:sender];
@@ -214,7 +214,7 @@
 
 - (BOOL)visible
 {
-    return [[[document window] contentView] visibilityForRegion: kRecentsHistogram];
+    return [[document contentView] visibilityForRegion: kRecentsHistogram];
 }
 
 - (void)rememberBrush:(BrushOptions*)options

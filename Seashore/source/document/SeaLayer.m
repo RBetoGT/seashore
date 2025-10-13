@@ -666,9 +666,13 @@
 {
     CGAffineTransform tx = CGAffineTransformIdentity;
 
-    if([self shouldTransform]) {
-        PositionTool *positionTool = (PositionTool*)[document currentTool];
-        if (positionTool != nil) {
+    if ([self shouldTransform]) {
+        // since this is called via background threads, the tool could change between the tool id check and now
+        // so verify the actuakl instance
+        id currentTool = [document currentTool];
+
+        if (currentTool != nil && [currentTool respondsToSelector:@selector(transform)]) {
+            PositionTool *positionTool = (PositionTool *)currentTool;
             tx = [[positionTool transform] cgtransform];
         }
     }

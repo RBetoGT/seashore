@@ -1,7 +1,5 @@
 #import "Seashore.h"
-#import <SeaComponents/BorderView.h>
-#import <SeaComponents/Label.h>
-
+#import <SeaComponents/SeaComponents.h>
 /*!
 	@class		OptionsUtility
 	@abstract	Displays the options for the current tool.
@@ -19,8 +17,8 @@
 	id lastView;
 
 	// The document which is the focus of this utility
-	__weak IBOutlet id document;
-	
+	__weak IBOutlet SeaDocument *document;
+
 	// The view to show when no document is active
 	NSView *blankView;
 

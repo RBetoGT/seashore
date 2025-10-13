@@ -1,3 +1,4 @@
+#import "SeaDocument.h"
 #import "OptionsUtility.h"
 #import "ToolboxUtility.h"
 #import "AbstractOptions.h"
@@ -69,12 +70,12 @@
 
 - (IBAction)show:(id)sender
 {
-    [[[document window] contentView] setVisibility:YES forRegion:kOptionsPanel];
+    [[document contentView] setVisibility:YES forRegion:kOptionsPanel];
 }
 
 - (IBAction)hide:(id)sender
 {
-    [[[document window] contentView] setVisibility:NO forRegion:kOptionsPanel];
+    [[document contentView] setVisibility:NO forRegion:kOptionsPanel];
 }
 
 - (IBAction)toggle:(id)sender
@@ -93,7 +94,7 @@
 
 - (BOOL)visible
 {
-    return [[[document window] contentView] visibilityForRegion: kOptionsPanel];
+    return [[document contentView] visibilityForRegion: kOptionsPanel];
 }
 
 @end

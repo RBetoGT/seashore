@@ -11,7 +11,7 @@
 
 @implementation SeaWhatsNew
 
-#define LATEST @"3.41"
+#define LATEST @"3.43"
 
 - (void)awakeFromNib
 {

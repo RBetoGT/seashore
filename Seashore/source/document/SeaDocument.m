@@ -139,9 +139,8 @@
     seaView = [[SeaView alloc] initWithDocument:self];
     scrollView = [[SeaScrollView alloc] initWithDocument:self andView:seaView andOverlay:[seaView extrasView]];
     
-    [scrollView setFrameSize:[contentView frame].size];
-
-    [contentView addSubview:scrollView];
+    [scrollView setFrameSize:[[[self contentView] documentView] frame].size];
+    [[[self contentView] documentView] addSubview:scrollView];
 
     [docWindow setFrame:[self standardFrame] display:NO];
 
@@ -247,6 +246,11 @@
 - (id)window
 {
 	return docWindow;
+}
+
+- (SeaWindowContent*)contentView
+{
+    return (SeaWindowContent*)[docWindow contentView];
 }
 
 - (void)updateWindowColor
@@ -493,7 +497,7 @@
     [[self optionsUtility] shutdown];
     [[self infoUtility] shutdown];
     [[self histogram] shutdown];
-    [[[self window] contentView] shutdown];
+    [[self contentView] shutdown];
 
 	// Then call our supervisor
 	[super close];
@@ -591,6 +595,10 @@
         [[contents layer:0] setName:displayNameOrNil];
     }
     [super setDisplayName:displayNameOrNil];
+}
+
++ (BOOL)autosavesInPlace {
+    return NO;
 }
 
 @end
